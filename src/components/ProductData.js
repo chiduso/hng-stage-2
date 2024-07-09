@@ -1,0 +1,98 @@
+export default [
+  {
+      id: 1,
+      title: "Coffee Table",      
+      price: 122,
+      coverImg: "coffeetable.png",      
+  },
+  {
+      id: 2,
+      title: "Cupboard Pantry ",      
+      price: 105,
+      coverImg: "cupboardpantry.png",      
+  },
+  {
+      id: 3,
+      title: "Bar Stool",      
+      price: 135,
+      coverImg: "barstool.png",      
+  },
+  {
+      id: 4,
+      title: "Dining Room Set",      
+      price: 548,
+      coverImg: "diningroomset.png",      
+  },
+  {
+      id: 5,
+      title: "Chaise Lounge Chair",      
+      price: 485,
+      coverImg: "chaiseloungechair.png",      
+  },
+  {
+      id: 6,
+      title: "Center Table",      
+      price: 333,
+      coverImg: "centertable.png",      
+  },
+  {
+      id: 7,
+      title: "Accent Chair Arm",      
+      price: 330,
+      coverImg: "accentchairarm.png",      
+  },
+  {
+      id: 8,
+      title: "Sofa",      
+      price: 243,
+      coverImg: "sofa.png",      
+  },
+  {
+      id: 9,
+      title: "Counter Level Bar Stool",      
+      price: 182,
+      coverImg: "counterlevelbarstool.png",      
+  },
+  {
+      id: 10,
+      title: "Green Sofa",      
+      price: 332,
+      coverImg: "greensofa.png",      
+  },
+  {
+      id: 11,
+      title: "Wooden Wardrobe",      
+      price: 200,
+      coverImg: "woodenwardrobe.png",      
+  },
+  {
+      id: 12,
+      title: "Side Board Carbinet",      
+      price: 180,
+      coverImg: "sideboardcarbinet.png",      
+  },
+  {
+      id: 13,
+      title: "Round Table",      
+      price: 205,
+      coverImg: "roundtable.png",      
+  },
+  {
+      id: 14,
+      title: "Lacquer Coffee Table",      
+      price: 540,
+      coverImg: "lacquercoffeetable.png",      
+  },
+  {
+      id: 15,
+      title: "Book Case",      
+      price: 135,
+      coverImg: "bookcase.png",      
+  },
+  {
+      id: 16,
+      title: "Wooden Center Table",      
+      price: 333,
+      coverImg: "woodencentertable.png",      
+  },  
+]
