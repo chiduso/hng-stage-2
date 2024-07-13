@@ -1,9 +1,22 @@
 import React from 'react'
 import CheckoutSummary from './CheckoutSummary';
 import { useSelector } from 'react-redux'
-
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Checkout() {
+
+  const notify = () => toast.success('Success', {
+    position: "top-right",
+    autoClose: 1500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+    });;
 
   let naira = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -20,7 +33,9 @@ export default function Checkout() {
     <>
       <div className="col-lg-6 billing px-5 mb-5">
         <p className="fw-bold text-black">Billing Information</p>
-        <form action="">
+        <form onSubmit={(event) => {
+          event.preventDefault();
+        }}>
           <label className="form-label" for="Country">Country/region</label>
           <input className="form-control mb-3 rounded-0" type="text"/>
           
@@ -85,11 +100,13 @@ export default function Checkout() {
               <li>{naira.format(totalAmount)}</li>
             </ul>
           </div>
-          <button className="cart-btn text-white">PAY NOW</button>
+          <button className="cart-btn text-white" onClick={notify}>PAY NOW</button>
         </form>
 
       </div>
-      <CheckoutSummary />    
+      <CheckoutSummary />  
+      <ToastContainer />
+
     </>         
   )
 }
