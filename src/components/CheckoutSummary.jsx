@@ -1,18 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-export default function CartPageSummary() {
-  const products = useSelector(store => store.cart.items); 
 
-    let naira = new Intl.NumberFormat('en-US', {
+export default function CheckoutSummary() {
+  const products = useSelector(store => store.cart.items);
+
+  let naira = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-});
+  });
+  
  const totalAmount = products.reduce((accumulator, item)=>{
 if(item.price){
   return accumulator + (item.price * item.quantity);
 };
+
 return 0;
  }, 0)
   return (
@@ -32,16 +34,10 @@ return 0;
             </div>
             <div className="subtotal w-75 container">
               <ul className="d-flex justify-content-between mb-0 p-4 fw-medium">
-                <li>Subtotal</li> 
+                <li>Subtotal</li>
                 <li>{naira.format(totalAmount)}</li>
               </ul>
-            </div>
-            <div className="container w-50 text-center mt-4">
-
-              <Link to='/checkout'>
-                <button className="btn cart-btn">Checkout Items</button>              
-              </Link>
-            </div>
+            </div>            
           </div>
     
   )

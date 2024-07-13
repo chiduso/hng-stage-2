@@ -12,7 +12,7 @@ export default function CheckoutPage() {
           <div className="container my-5">
           <div className="row">
               <Checkout />
-
+    
           </div>
 
           </div>

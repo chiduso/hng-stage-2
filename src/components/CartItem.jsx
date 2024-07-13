@@ -1,17 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import ProductData from './ProductData';
+import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCartBulk, removeFromCartSingle } from '../stores/Cart';
 
 export default function CartItem(props) {
   const {productId, quantity} = props.data;
-  // const [detail, setDetail] = useState([]);
+  
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //     const findDetail = ProductData.filter(product => product.id === productId)[0];
-  //     setDetail(findDetail);
-  // }, [productId])
   const handleAddToCart =()=>{
     dispatch(addToCart(props.data))
   }
@@ -21,11 +16,16 @@ export default function CartItem(props) {
   const handleRemoveBulk = ()=>{
     dispatch(removeFromCartBulk(props.data.id))
   }
+
+  let naira = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
   return (
     
       <div className="col container p-0 my-3">          
         <div className="d-flex align-items-center justify-content-between product-cart px-4 py-3">            
-                <img src={`assets/img/${props.data.coverImg}`} alt="" className="my-cart-img p-1 rounded-3 mx-2" />
+                <img src={props.data.coverImg} alt="" className="my-cart-img p-1 rounded-3 mx-2" />
                 <span>{props.data.title}</span>
                 <div className='d-flex'>
                   <button className='btn' onClick={handleRemoveFromCart}><i className="bi bi-dash"></i></button>
@@ -33,7 +33,7 @@ export default function CartItem(props) {
                   <button className='btn' onClick={handleAddToCart}><i className="bi bi-plus"></i></button>
                   
                 </div>
-                <span>&#8358;{props.data.price * quantity},000</span>
+                <span>{naira.format(props.data.price * quantity)}</span>
                 <button className='btn' onClick={handleRemoveBulk}><i className="bi bi-x"></i></button>
         </div>            
       </div>

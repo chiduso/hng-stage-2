@@ -1,9 +1,14 @@
 import React from 'react'
-import CartPageSummary from './CartPageSummary'
+import CheckoutSummary from './CheckoutSummary';
 import { useSelector } from 'react-redux'
 
 
 export default function Checkout() {
+
+  let naira = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
   const products = useSelector(store => store.cart.items); 
   const totalAmount = products.reduce((accumulator, item)=>{
   if(item.price){
@@ -14,7 +19,7 @@ export default function Checkout() {
   return (   
     <>
       <div className="col-lg-6 billing px-5 mb-5">
-        <p className="fw-bold">Billing Information</p>
+        <p className="fw-bold text-black">Billing Information</p>
         <form action="">
           <label className="form-label" for="Country">Country/region</label>
           <input className="form-control mb-3 rounded-0" type="text"/>
@@ -29,9 +34,7 @@ export default function Checkout() {
               <input className="form-control mb-3 rounded-0" type="text"/>
             </div>
           </div>
-          
-
-          
+                    
           <label className="form-label" for="address">Address</label>
           <input className="form-control mb-3 rounded-0" type="text"/>
 
@@ -45,8 +48,7 @@ export default function Checkout() {
               <input className="form-control mb-3 rounded-0" type="text"/>
             </div>
           </div>
-          
-          
+                    
           <label className="form-label" for="contactNumber">Contact Number</label>
           <input className="form-control mb-3 rounded-0" type="text"/>
 
@@ -75,24 +77,19 @@ export default function Checkout() {
               <label className="form-label" for="cvv">CVV</label>
               <input className="form-control mb-3 rounded-0" type="number"/>
             </div>
-          </div>
-          
-          
+          </div>                
 
           <div className="py-4 bill-total px-3 my-3">
             <ul className="d-flex ps-0 align-items-center mb-0 justify-content-between text-black fw-semibold">
               <li>Total</li>
-              <li>&#8358;{totalAmount},000</li>
+              <li>{naira.format(totalAmount)}</li>
             </ul>
           </div>
           <button className="cart-btn text-white">PAY NOW</button>
         </form>
 
       </div>
-      <CartPageSummary />
-    
-    </> 
-    
-    
+      <CheckoutSummary />    
+    </>         
   )
 }
