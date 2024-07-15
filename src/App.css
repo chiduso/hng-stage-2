@@ -111,12 +111,6 @@ footer ul{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.product-title{
-
-}
-.product-price{
-
-}
 
 .hero-content{
   width: 90%;
@@ -156,15 +150,8 @@ footer ul{
   .sidebar-off{
     width: 50%;
   }
-  .sidebar-offcanvas-link{
-    
-  }
-  .product-cart{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
+
+ 
   
 }
 
