@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { addToCart, removeFromCartSingle } from '../stores/Cart';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Details(props) {
+
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     dispatch(addToCart(props.data))
@@ -22,6 +24,18 @@ export default function Details(props) {
     return item.id === props.data.id
   });
 const [activeImage, setActiveImage] = useState(props.data.coverImg)
+
+const notify = () => toast.success('Added to cart', {
+  position: "top-right",
+  autoClose: 1500,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+  transition: Bounce,
+  });;
   return (
     <div className="container">
       <div className="container my-5 d-lg-flex flex-lg-row justify-content-center align-items-center text-center rounded-5">
@@ -71,12 +85,17 @@ const [activeImage, setActiveImage] = useState(props.data.coverImg)
       </button>
     </div>
     ) : (
-      <button className="btn cart-btn me-lg-2 me-2 mb-xxl-2" onClick={handleAddToCart}>Add to Cart</button> 
+      <button className="btn cart-btn me-lg-2 me-2 mb-xxl-2" onClick={() => {
+        handleAddToCart();
+        notify();
+      }}>Add to Cart</button> 
     )
   }
         </div>
     
       </div>
+      <ToastContainer />
+
   </div>
   )
 }

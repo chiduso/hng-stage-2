@@ -12,8 +12,9 @@ export default function Sidebar() {
       <div className="offcanvas bg-success bg-lg-gradient offcanvas-start sidebar-off flex-lg-row align-items-center" tabIndex='-1' id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
       <div className="mx-5 text-center sidebar-offcanvas-link">
       
-      <h1><Link to='/' className="navbar-brand mb-0 text-white" href="#">ZENITH</Link></h1>
-      <h4><Link to='/' href="#" className="navbar-brand text-white">FURNITURE</Link></h4>   
+      
+      <h1><Link to='/' className="navbar-brand mb-0 text-white">ZENITH</Link></h1>
+      <h4><Link to='/'  className="navbar-brand text-white">FURNITURE</Link></h4>   
        
       </div>
       <hr className="d-lg-none d-xl-block "/>
@@ -26,7 +27,7 @@ export default function Sidebar() {
             <a className="nav-link navbar-link sidebar-offcanvas-link" href="#">FEATURED</a>
           </li>
           <li className="nav-item px-lg-3">
-            <h5 className="p-0"><Link to='../cart' className="nav-link navbar-link sidebar-offcanvas-link" href="lg-#">CART</Link></h5>
+            <h5 className="p-0"><Link to='../cart' className="nav-link navbar-link sidebar-offcanvas-link">CART</Link></h5>
           </li>                            
         </ul>
 
@@ -37,8 +38,8 @@ export default function Sidebar() {
     <nav className="sidebar">
     <div className="mx-5 pt-2">
       
-      <h1><Link to='/' className="navbar-brand text-white mb-0" href="#">ZENITH</Link></h1>
-      <h4><Link to='/' href="#" className="navbar-brand">FURNITURE</Link></h4>      
+      <h1><Link to='/' className="navbar-brand text-white mb-0">ZENITH</Link></h1>
+      <h4><Link to='/' className="navbar-brand">FURNITURE</Link></h4>      
       
     </div>  
       

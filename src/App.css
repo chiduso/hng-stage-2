@@ -159,6 +159,13 @@ footer ul{
   .sidebar-offcanvas-link{
     
   }
+  .product-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
 }
 
 
