@@ -24,7 +24,7 @@ export default function CartItem(props) {
   return (
     
       <div className="col container p-0 my-3 px-3">          
-        <div className="d-lg-flex align-items-center justify-content-between product-cart px-4 py-3">            
+        <div className="d-flex align-items-center justify-content-between product-cart px-4 py-3">            
                 <img src={props.data.coverImg} alt="" className="my-cart-img p-1 rounded-3 mx-2" />
                 <span>{props.data.title}</span>
                 <div className='d-flex'>
