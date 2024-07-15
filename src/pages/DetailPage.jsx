@@ -18,7 +18,7 @@ const [isLoading, setIsLoading] = useState(false)
       return res.json();
     })
     .then(data => {
-      console.log(data);
+      
       setProdutDetails({
    id: data.id,
     title: data.name,     

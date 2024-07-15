@@ -13,8 +13,7 @@ function Home() {
     .then(res => {
       return res.json();
     })
-    .then(data => {
-      console.log(data);
+    .then(data => {      
    setProduts(data.items.map(item =>({
     id: item.id,
     title: item.name,     
@@ -23,14 +22,11 @@ function Home() {
    })))
     })
   }, [size]);
-  console.log("this is our data", products);
+  
   const product = products.map((data) => {
     return <Product key={data.id} data={data} />;
   });
   
-
-
-
 
   return (
     <>

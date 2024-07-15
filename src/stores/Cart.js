@@ -14,8 +14,7 @@ const cartSlice = createSlice({
       );
       if (doesProductExist) {
         const updatedItems = state.items.map(item =>{
-          console.log("payload id:, ", payload.id);
-          console.log("item id: , ", item.id)
+          
           if(item.id === payload.id){
          
             return ({
