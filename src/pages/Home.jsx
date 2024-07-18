@@ -7,10 +7,13 @@ import { useEffect, useState } from "react";
 
 function Home() {
   const [products, setProduts] = useState([]);
-  const [size, setSize] = useState(10)
-  useEffect(() => {    
+  const [size, setSize] = useState(10);
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    setIsLoading(true)      ;
     fetch(`https://timbu-get-all-products.reavdev.workers.dev/?organization_id=fa97294b5b044c6fbd09a48fd9aa8566&page=1&size=${size}&Appid=2PE59FPJFGKR3IL&Apikey=650134ab568c4f94990db98b7507664e20240712183420224761`)
     .then(res => {
+      setIsLoading(false)
       return res.json();
     })
     .then(data => {      
@@ -30,9 +33,13 @@ function Home() {
 
   return (
     <>
+      
       <Navbar />
       <Hero />
       <Tab />
+      {
+        isLoading && (<p>Loading....</p>)
+      }
       <section className="my-5">
         <div className="container p-0">
           <div className="product-group gap-5">{product}</div>

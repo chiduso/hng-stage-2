@@ -8,7 +8,7 @@ export default function DetailPage() {
  
   const { id } = useParams();
   const [productDetails, setProdutDetails] = useState();
-const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   useEffect( 
     ()=>{
   setIsLoading(true)      
@@ -40,7 +40,7 @@ const [isLoading, setIsLoading] = useState(false)
       <div className="cart-page">
         <DetailHeader />
         {
-        isLoading && (<img id='spinner' src='assets/img/spinner.svg' alt='' />)
+        isLoading && (<p>Loading....</p>)
         }
       {
         productDetails &&   <Details  data={productDetails}/>

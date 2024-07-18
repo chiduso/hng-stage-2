@@ -118,6 +118,10 @@ footer ul{
 .sidebar-offcanvas{
   display: none;
 }
+
+form p{
+  color: red;
+}
 @media only screen and (max-width: 992px){
   body{
     padding-right: 0;
@@ -150,9 +154,6 @@ footer ul{
   .sidebar-off{
     width: 50%;
   }
-
- 
-  
 }
 
 
